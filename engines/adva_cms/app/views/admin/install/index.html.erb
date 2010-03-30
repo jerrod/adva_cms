@@ -6,35 +6,35 @@
 <% form_for :site, Site.new, install_path do |f| %>
   <h3><%= t(:'adva.titles.website') %></h3>
   <% f.field_set :site do %>
-    <% fields_for @site do |site| %>
-   		<%= site.text_field :name, :label => true, :tabindex => 1 %>
+    <% fields_for :site, @site do |site| %>
+       <%= site.text_field :name, :label => true, :tabindex => 1 %>
     <% end %>
   <% end %>
 
   <h3><%= t(:'adva.titles.home_section') %></h3>
-	<% f.field_set :home_section do %>
+  <% f.field_set :home_section do %>
     <% fields_for :section, @section do |s| %>
       <% column do %>
-      	<%= s.collection_select :type, Section.types, :to_s, :to_s, {}, :label => true, :style => "width:100%;", :tabindex => 2 %>
+        <%= s.collection_select :type, Section.types, :to_s, :to_s, {}, :label => true, :style => "width:100%;", :tabindex => 2 %>
       <% end %>
       <% column do %>
-      	<%= s.text_field :title, :label => true, :tabindex => :section_type %>
+        <%= s.text_field :title, :label => true, :tabindex => :section_type %>
       <% end %>
     <% end %>
   <% end %>
-  
+
   <h3><%= t(:'adva.titles.admin_account') %></h3>
-	<% f.field_set :admin_account do %>
-    <% fields_for @user do |user| %>
+  <% f.field_set :admin_account do %>
+    <% fields_for :user, @user do |user| %>
       <% column do %>
-   		<%= user.text_field :email, :label => true, :tabindex => 3 %>
-   		<% end %>
-   		<% column do %>
-   		<%= user.password_field :password, :label => true, :tabindex => 4 %>
-   		<% end %>
+       <%= user.text_field :email, :label => true, :tabindex => 3 %>
+       <% end %>
+       <% column do %>
+       <%= user.password_field :password, :label => true, :tabindex => 4 %>
+       <% end %>
     <% end %>
   <% end %>
-  
+
   <% f.buttons do %>
     <%= submit_tag t(:'adva.sites.links.create_site_and_account') %>
   <% end %>

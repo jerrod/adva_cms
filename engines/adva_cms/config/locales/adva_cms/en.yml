@@ -1,5 +1,62 @@
 en:
+  filter:
+    submit:
+      value: Filtern
   activerecord:
+    attributes:
+      name: Name
+      permalink: Permalink
+      tag_list: Tags
+      article:
+        title: Title
+        permalink: Permalink
+        author_id: Author
+        tag_list: Tag List
+      asset:
+        title: Title
+        tag_list: Tags
+      blog:
+        title: Title
+        permalink: Permalink
+        author_id: Author
+        tag_list: Tag List
+        published: Published
+        content_filter: Textfilter
+        contents_per_page: Items per page
+      category:
+        title: Title
+        permalink: Permalink
+      page:
+        content_filter: Textfilter
+        layout: Layout
+        template: Template
+        title: Title
+        type: Type
+        published: Published
+        parent_id: Parent Section
+      site:
+        name: Site Name
+        comment_filter: Textfilter for Comments
+        meta_keywords: Keywords
+        meta_description: Description
+        meta_author: Author
+        meta_copyright: Copyright
+        meta_geourl: Geo-URL
+      theme:
+        name: Name
+        author: Author
+        homepage: Website
+        theme_id: ID
+        version: Version
+        summary: Summary
+      theme_file:
+        data: Data
+      user:
+        first_name: First Name
+        last_name: Last Name
+        email: E-Mail
+        homepage: Website
+        password: Password
     errors:
       messages:
         only_integer: can only be whole number.
@@ -38,7 +95,7 @@ en:
       unknown: unknown
       add: Add
       add_new: add new
-    titles: 
+    titles:
       accounts: Accounts
       actions: Actions
       activate: Activate
@@ -120,7 +177,7 @@ en:
       website_configuration: Website configuration
       wikipages: Pages
       admin_account: Admin account
-    links: 
+    links:
       back: Back
       create_one_now: Create one now. &raquo;
       delete: Delete
@@ -157,12 +214,12 @@ en:
       template: Enter the location (like “Templates/*”) of the template that articles in this section should use. If you're unsure, leave this field blank.
       layout: Enter the location (like “Layouts/*”) of the layout that articles in this section should use. If you're unsure, leave this field blank.
       akismet: Askimet is a third-party service to filter spam. If you've signed up for the service, enter your API Key and URL and check the box to enable this service.
-      defensio: Defensio is a third-party service to filter spam. If you've signed up for the service, enter your API Key and URL and check the box to enable this service. 
+      defensio: Defensio is a third-party service to filter spam. If you've signed up for the service, enter your API Key and URL and check the box to enable this service.
       roles: Choose which areas this user can access on the site.
       categories: "Avoid names countaining only 4 or 2 digits!"
       sets: "Avoid names countaining only 4 or 2 digits!"
-    messages: 
-      insufficient_permissions: 
+    messages:
+      insufficient_permissions:
         title: Insufficient permissions
         body: If you think you should be allowed to perform this action please contact the admin of this site and ask him to reconfigure your permissions.
       not_editable: "Sorry, but it's not editable!"
@@ -314,6 +371,7 @@ en:
       columns:
         title: Title
         category: Category
+        actions: Actions
       attributes:
         name: name
       hints:
@@ -349,9 +407,9 @@ en:
       all: "&mdash; All categories &mdash;"
     contents:
       not_published: not published
-    articles:      
-      optimistic_lock: 
-        exception: 
+    articles:
+      optimistic_lock:
+        exception:
           missing_timestamp: "Can not update article: timestamp missing. Please make sure that your form has a hidden field: updated_at."
       count:
         one: "{{count}} article"
@@ -365,6 +423,7 @@ en:
         comments: Comments
         published: Published
         author: Author
+        actions: Actions
       translation_links: "available translations: {{locales}}"
       locale_for_record: "Locale for this article: "
       write_article: Write your article
@@ -389,7 +448,7 @@ en:
       no_filtered_articles: "There are no articles matching that criteria."
       publish_on_date: Publish on this date
       flash:
-        optimistic_lock: 
+        optimistic_lock:
           failure: In the meantime this article has been updated by someone else. Please resolve any conflicts.
         destroy:
           success: The article has been deleted.
@@ -413,6 +472,7 @@ en:
       columns:
         url: URL
         cached_at: Cached
+        actions: Actions
       no_entries: There currently aren't any pages being cached.
       confirmation:
         cleared: This page has been removed from the cache.
@@ -473,7 +533,7 @@ en:
           approved: Approved
           unapproved: Unapproved
       options:
-        expiration: 
+        expiration:
           not_allowed: Are not allowed
           never_expire: Never expire
           x_hours_after_publishing:
@@ -516,7 +576,7 @@ en:
       view:
         new: "{{name}} <{{email}}> just posted a new {{activity}} on {{site}} in section {{section}}."
       comment: Comment {{actions}}
-      topic: Topic {{actions}}  
+      topic: Topic {{actions}}
       actions: "{{type}} {{actions}} in {{activity}}."
     signup:
       notifications:
@@ -568,11 +628,11 @@ en:
 
             {{link}}
 
-            Alternatively, if your browser window is still open, you can use the following 
+            Alternatively, if your browser window is still open, you can use the following
             confirmation code together with your new password:
-            
+
             {{token}}
-            
+
             It is suggested you reset your password as soon as possible since this is a
             time-limited link (to protect your account).
 
@@ -599,12 +659,12 @@ en:
           failure: Could not login with this email and password.
       labels:
         remember_me: Remember me
-    users: 
-      attributes: 
+    users:
+      attributes:
         new_password: New password
         password: Password
         email: E-Mail
-      links: 
+      links:
         new: Add a new user
         create_user: Create user
         edit: Edit
@@ -634,7 +694,7 @@ en:
         url: Homepage
         created_at: Created
         email: Email
-      info: 
+      info:
         showed_up: "showed up: {{time_ago}} ago"
         logged_in_as: "Logged in as: {{name}}"
       confirm_delete: Are you sure you want to delete this user account?
@@ -653,7 +713,7 @@ en:
         author_for: "Author for {{context}}"
         designer_for: "Designer for {{context}}"
         user_for: "Live User for website {{context}}"
-      errors: 
+      errors:
         messages:
           role_required: "You need one of the following roles to perform this action: {{roles}}"
           not_admin: You need to be an admin to perform this action.
@@ -678,7 +738,7 @@ en:
           success: "{{asset}} detached from this {{content}}."
         create:
           first_success: "'{{asset}}' was uploaded."
-          success: 
+          success:
             one: "One asset was uploaded."
             other: "{{count}} assets were uploaded."
         add:
@@ -814,6 +874,7 @@ en:
       columns:
         path: Path
         type: Type
+        actions: Actions
       links:
         create_one_now: Create one now. &raquo;
         new_file: New File
@@ -876,6 +937,7 @@ en:
         description: Description
         topics_count: Topics count
         posts_count: Posts count
+        actions: Actions
       boards_count:
         one: "{{count}} board"
         other: "{{count}} boards"
@@ -1004,7 +1066,7 @@ en:
     flash:
       authentication_required_role: "You need to have the role {{role}} to administrate the sites of your account."
       no_permission_for_admin_area_of_site: "You do not have permission to access the admin area of this site. Please, contact your system administrator or login with another user account."
-      no_permission_for_admin_area_of_account: "You do not have permission to access the admin area of this account. Please, contact your system administrator or login with another user account."      
+      no_permission_for_admin_area_of_account: "You do not have permission to access the admin area of this account. Please, contact your system administrator or login with another user account."
       login_to_access_admin_area_of_site: "Please login to access the admin area of this site."
       login_to_access_admin_area_of_account: "Please login to access the admin area of this account."
     sidebar:
@@ -1040,6 +1102,7 @@ en:
       columns:
         subject: Subject
         created_at: Created at
+        actions: Actions
       flash:
         record_not_found: Contact mail you requested could not be found!
         destroy:
@@ -1048,7 +1111,7 @@ en:
           success: The contact mail was successfully created.
           failure: The contact mail could not be saved.
       confirm_delete: Are you sure you want to delete this contact mail?
-          
+
     # have cells translations here for the moment
     cells:
       album:
